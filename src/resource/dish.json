@@ -1,0 +1,1434 @@
+[
+	{
+		"iconId": 2,
+		"name": "玄米飯",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "玄米3",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 1,
+		"name": "分搗飯",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "分搗米3",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 3,
+		"name": "白飯",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "白米3",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 2,
+		"name": "強飯",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "白米3, 塩1, <酒>1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 40,
+		"name": "山菜強飯",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "白米3, 蕨2, 塩1, <酒>1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 41,
+		"name": "栗強飯",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "白米3, 栗2, 塩1, <酒>1",
+		"season": "秋",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 42,
+		"name": "銀杏強飯",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "白米3, 銀杏2, 塩1, <酒>1",
+		"season": "秋",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 43,
+		"name": "焼飯",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "白米3, 醤油1, 油1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 4,
+		"name": "赤飯",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "白米3, 豆2, 塩2, 胡麻1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 44,
+		"name": "五穀飯",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "<米>3, <米>3, 麦1, 粟1, 稗1, 豆1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 45,
+		"name": "粟飯",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "粟3",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 2,
+		"name": "麦飯",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "麦3",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 45,
+		"name": "稗飯",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "稗3",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 46,
+		"name": "干飯",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "干飯1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 46,
+		"name": "**粥",
+		"category": "主食",
+		"foodCandidate": [
+			"<穀>"
+		],
+		"recipe": "**1, 塩1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 47,
+		"name": "七草粥",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "<穀>1, 七草1, 塩1",
+		"season": "春",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 48,
+		"name": "**の増水",
+		"category": "主食",
+		"foodCandidate": [
+			"<穀>"
+		],
+		"recipe": "**2, <菜>1, 出汁1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 49,
+		"name": "**茶漬",
+		"category": "主食",
+		"foodCandidate": [
+			"<穀>"
+		],
+		"recipe": "**2, <薬味>1, 茶1, 出汁1, 醤油1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 50,
+		"name": "鮭茶漬",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "白米2, 鮭1, <薬味>1, 茶1, 出汁1, 醤油1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 51,
+		"name": "松茸茶漬",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "白米2, 松茸1, <薬味>1, 茶1, 出汁1, 醤油1",
+		"season": "秋",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 48,
+		"name": "戻増水",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "<菜>1, 出汁1, 干飯2",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 52,
+		"name": "炙餅",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "餅1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 5,
+		"name": "**丼",
+		"category": "主食",
+		"foodCandidate": [
+			"<肉>",
+			"<魚>"
+		],
+		"recipe": "**2, <穀>3, 砂糖1, 醤油1, <酒>1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 53,
+		"name": "鴨玉丼",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "鴨肉2, 卵1, <穀>3, 砂糖1, 醤油1, <酒>1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 54,
+		"name": "**天丼",
+		"category": "主食",
+		"foodCandidate": [
+			"<肉>",
+			"<魚>",
+			"<菜>"
+		],
+		"recipe": "**2, 卵1, <穀>3, 麦1, 砂糖1, 醤油1, 油1, <酒>1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 55,
+		"name": "饂飩",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "麦3, 塩1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 56,
+		"name": "きつね饂飩",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "麦3, 塩1, 油2, 豆腐1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 57,
+		"name": "天麩羅饂飩",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "<肉/魚/菜>1, 卵1, 麦4, 塩1, 油3",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 58,
+		"name": "索麺",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "麦2, 塩1, 油1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 6,
+		"name": "蕎麦切",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "蕎麦3, 出汁1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 59,
+		"name": "たぬき蕎麦切",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "麦1, 蕎麦3, 出汁1, 油1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 60,
+		"name": "山菜蕎麦切",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "蕎麦3, 蕨2, 出汁1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 61,
+		"name": "天麩羅蕎麦切",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "卵1, 麦1, 蕎麦3, <肉/魚/菜>1, 出汁1, 油3",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 7,
+		"name": "パンネクック",
+		"category": "主食",
+		"foodCandidate": [],
+		"recipe": "卵3, 麦3, 豚肉の燻製1, チーズ1",
+		"season": "",
+		"lockType": "Ventania",
+		"isAdded": false
+	},
+	{
+		"iconId": 9,
+		"name": "**汁",
+		"category": "汁",
+		"foodCandidate": [
+			"<菜>"
+		],
+		"recipe": "**2",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 62,
+		"name": "**の雑煮",
+		"category": "汁",
+		"foodCandidate": [
+			"<菜>"
+		],
+		"recipe": "**1, 出汁1, 醤油1, 餅1, <酒類>1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 9,
+		"name": "蓼水汁",
+		"category": "汁",
+		"foodCandidate": [],
+		"recipe": "味噌1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 63,
+		"name": "**の味噌汁",
+		"category": "汁",
+		"foodCandidate": [
+			"<肉>",
+			"<菜>"
+		],
+		"recipe": "**1, 出汁1, 味噌1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 63,
+		"name": "芋がらの味噌汁",
+		"category": "汁",
+		"foodCandidate": [],
+		"recipe": "出汁1, 芋がら縄1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 64,
+		"name": "**の毛切汁",
+		"category": "汁",
+		"foodCandidate": [
+			"<魚>"
+		],
+		"recipe": "**1, <薬味>1, 出汁1, 味噌1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 65,
+		"name": "味噌炙汁",
+		"category": "汁",
+		"foodCandidate": [],
+		"recipe": "根菜1, 出汁1, 味噌1, 豆腐1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 66,
+		"name": "青搗汁",
+		"category": "汁",
+		"foodCandidate": [],
+		"recipe": "雉肉1, <薬味>1, 出汁1, 味噌1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 65,
+		"name": "豚汁",
+		"category": "汁",
+		"foodCandidate": [],
+		"recipe": "豚肉1, 根菜1, 葱1, 出汁1, 味噌1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 9,
+		"name": "胡瓜の冷汁",
+		"category": "汁",
+		"foodCandidate": [],
+		"recipe": "胡瓜1, 胡麻1, 出汁1, 味噌1, 清水1",
+		"season": "夏",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 65,
+		"name": "けんちん汁",
+		"category": "汁",
+		"foodCandidate": [],
+		"recipe": "芋1, 根菜1, 茸1, 出汁1, 油1, 豆腐1",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 67,
+		"name": "**の摘入汁",
+		"category": "汁",
+		"foodCandidate": [
+			"<肉>",
+			"<魚>"
+		],
+		"recipe": "**2, 卵1, 麦1, 根菜1, 生姜1, 出汁1",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 68,
+		"name": "鯉の濃醤",
+		"category": "汁",
+		"foodCandidate": [],
+		"recipe": "鯉1, 葱1, 味噌2, <酒>1",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 68,
+		"name": "泥鰌の濃醤",
+		"category": "汁",
+		"foodCandidate": [],
+		"recipe": "泥鰌1, 葱1, 味噌2, <酒>1",
+		"season": "冬",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 68,
+		"name": "鮒の濃醤",
+		"category": "汁",
+		"foodCandidate": [],
+		"recipe": "鮒1, 葱1, 味噌2, <酒>1",
+		"season": "秋",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 68,
+		"name": "鰻の濃醤",
+		"category": "汁",
+		"foodCandidate": [],
+		"recipe": "鰻1, 葱1, 味噌2, <酒>1",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 10,
+		"name": "エルテンスープ",
+		"category": "汁",
+		"foodCandidate": [],
+		"recipe": "卵1, 豆1, 馬鈴薯1, 玉葱1, 豚肉の燻製1",
+		"season": "冬",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 11,
+		"name": "**の炙焼",
+		"category": "菜",
+		"foodCandidate": [
+			"<肉>",
+			"<魚>",
+			"<虫>"
+		],
+		"recipe": "**2",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 69,
+		"name": "松茸の一本焼き",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "松茸1, 塩1",
+		"season": "秋",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 12,
+		"name": "**の浸物",
+		"category": "菜",
+		"foodCandidate": [
+			"<菜>"
+		],
+		"recipe": "**2, 出汁1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 70,
+		"name": "**の酢和",
+		"category": "菜",
+		"foodCandidate": [
+			"<菜>"
+		],
+		"recipe": "**1, 塩1, 酢1",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 70,
+		"name": "**の胡麻酢和",
+		"category": "菜",
+		"foodCandidate": [
+			"<菜>"
+		],
+		"recipe": "**1, 塩1, 胡麻1, 酢1",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 70,
+		"name": "**の酢味噌和",
+		"category": "菜",
+		"foodCandidate": [
+			"<魚>"
+		],
+		"recipe": "**1, 胡麻1, 味噌1, 酢1",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 13,
+		"name": "**の塩焼",
+		"category": "菜",
+		"foodCandidate": [
+			"<魚>"
+		],
+		"recipe": "**2, 塩1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 71,
+		"name": "銀杏の串焼",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "銀杏2, 塩1",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 72,
+		"name": "蜂の子の串焼",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "蜂の子2, 塩1",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 73,
+		"name": "蝗の串焼",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "蝗2, 塩1",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 12,
+		"name": "**の塩茹",
+		"category": "菜",
+		"foodCandidate": [
+			"<菜>"
+		],
+		"recipe": "**2, 塩1, 出汁1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 74,
+		"name": "鰻の白蒸",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "鰻1, 塩1",
+		"season": "冬",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 14,
+		"name": "**の白干",
+		"category": "菜",
+		"foodCandidate": [
+			"<肉>"
+		],
+		"recipe": "**の白干1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 75,
+		"name": "**の酒漬焼",
+		"category": "菜",
+		"foodCandidate": [
+			"<肉>"
+		],
+		"recipe": "**の白干2, <酒>1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 15,
+		"name": "**の燻製",
+		"category": "菜",
+		"foodCandidate": [
+			"<肉>"
+		],
+		"recipe": "**の燻製1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 12,
+		"name": "**の糠漬",
+		"category": "菜",
+		"foodCandidate": [
+			"<菜>"
+		],
+		"recipe": "**の糠漬1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 16,
+		"name": "**の鮨",
+		"category": "菜",
+		"foodCandidate": [
+			"<肉>",
+			"<魚>"
+		],
+		"recipe": "**の鮨1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 17,
+		"name": "**の煮凝",
+		"category": "菜",
+		"foodCandidate": [
+			"<肉>",
+			"<魚>"
+		],
+		"recipe": "**1, 醤油1, <酒類>1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 76,
+		"name": "**の醤油漬",
+		"category": "菜",
+		"foodCandidate": [
+			"<魚>"
+		],
+		"recipe": "**2, 昆布1, 醤油1, <酒類>1",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 18,
+		"name": "煎り団栗",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "団栗5",
+		"season": "秋",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 77,
+		"name": "納豆",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "豆5",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 78,
+		"name": "味噌田楽",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "味噌1, 豆腐1",
+		"season": "冬",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 79,
+		"name": "煮込み田楽",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "<魚>3, 卵1, 芋1, 根菜1, 出汁1, 豆腐1",
+		"season": "冬",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 80,
+		"name": "**の時雨煮",
+		"category": "菜",
+		"foodCandidate": [
+			"<魚>",
+			"<虫>"
+		],
+		"recipe": "**2, 生姜1, 砂糖1, 醤油1, <酒>1",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 81,
+		"name": "芋の煮転",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "芋2, 砂糖1, 醤油1, <酒>1",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 81,
+		"name": "馬鈴薯の煮転",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "馬鈴薯2, 砂糖1, 醤油1, <酒>1",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 19,
+		"name": "冷奴",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "生姜1, 醤油1, 豆腐1",
+		"season": "夏",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 82,
+		"name": "焼き玉黍",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "玉黍1, 砂糖1, 醤油1",
+		"season": "夏",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 83,
+		"name": "山葵漬",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "山葵漬1",
+		"season": "春",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 84,
+		"name": "**の山葵焼",
+		"category": "菜",
+		"foodCandidate": [
+			"<肉>"
+		],
+		"recipe": "**2, 山葵1, 塩1",
+		"season": "春",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 20,
+		"name": "梅干",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "梅干1",
+		"season": "夏",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 21,
+		"name": "玉子焼",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "卵2, <塩/砂糖/出汁/醤油>",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 85,
+		"name": "茶碗蒸",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "卵1, 銀杏1, 出汁1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 86,
+		"name": "湯豆腐",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "昆布1, 清水1, 豆腐1",
+		"season": "冬",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 87,
+		"name": "**の白和",
+		"category": "菜",
+		"foodCandidate": [
+			"<菜>"
+		],
+		"recipe": "**1, 胡麻1, 出汁1, 豆腐1",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 88,
+		"name": "干塩鮭",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "干塩鮭1",
+		"season": "冬",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 22,
+		"name": "**の素揚",
+		"category": "菜",
+		"foodCandidate": [
+			"<菜>"
+		],
+		"recipe": "**1, 油3",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 22,
+		"name": "**の空揚",
+		"category": "菜",
+		"foodCandidate": [
+			"<肉>",
+			"<魚>"
+		],
+		"recipe": "**2, 麦1, 油3",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 22,
+		"name": "**の天麩羅",
+		"category": "菜",
+		"foodCandidate": [
+			"<肉>",
+			"<魚>",
+			"<菜>"
+		],
+		"recipe": "**2, 卵1, 麦1, 油3",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 89,
+		"name": "**の煮物",
+		"category": "菜",
+		"foodCandidate": [
+			"<肉>",
+			"<魚>",
+			"<菜>"
+		],
+		"recipe": "**1, 砂糖1, 醤油1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 90,
+		"name": "**の味噌煮",
+		"category": "菜",
+		"foodCandidate": [
+			"<肉>",
+			"<魚>",
+			"<菜>"
+		],
+		"recipe": "**1, 生姜1, 砂糖1, 味噌1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 91,
+		"name": "芋がらの煮付",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "根菜1, 出汁1, 油1, 豆腐1, 芋がら縄1",
+		"season": "",
+		"lockType": "",
+		"isAdded": true
+	},
+	{
+		"iconId": 23,
+		"name": "兎鍋",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "兎肉3, <薬味>1, 清水3, 出汁1",
+		"season": "冬",
+		"lockType": "HotPot",
+		"isAdded": false
+	},
+	{
+		"iconId": 23,
+		"name": "猪鍋",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "猪肉3, <薬味>1, 清水3, 出汁1",
+		"season": "冬",
+		"lockType": "HotPot",
+		"isAdded": false
+	},
+	{
+		"iconId": 23,
+		"name": "鹿鍋",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "鹿肉3, <薬味>1, 清水3, 出汁1",
+		"season": "冬",
+		"lockType": "HotPot",
+		"isAdded": false
+	},
+	{
+		"iconId": 23,
+		"name": "スッポン鍋",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "スッポン肉3, <薬味>1, 清水2, <酒>1",
+		"season": "冬",
+		"lockType": "HotPot",
+		"isAdded": false
+	},
+	{
+		"iconId": 23,
+		"name": "熊鍋",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "熊肉3, <薬味>1, 清水3, 砂糖1, 醤油1",
+		"season": "冬",
+		"lockType": "HotPot",
+		"isAdded": false
+	},
+	{
+		"iconId": 92,
+		"name": "**の常夜鍋",
+		"category": "菜",
+		"foodCandidate": [
+			"<肉>",
+			"<魚>"
+		],
+		"recipe": "**2, 根菜1, 昆布1, 清水1, <酒>1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 93,
+		"name": "泥鰌の小鍋立",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "泥鰌2, 根菜1, 葱1, 砂糖1, 醤油1, <酒>1",
+		"season": "冬",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 94,
+		"name": "鰊の麹漬",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "鰊1, 根菜1, 塩1, 砂糖1, 麹1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 24,
+		"name": "ハーリング",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "ハーリング1",
+		"season": "冬",
+		"lockType": "Ventania",
+		"isAdded": false
+	},
+	{
+		"iconId": 25,
+		"name": "ヒュッツポット",
+		"category": "菜",
+		"foodCandidate": [],
+		"recipe": "馬鈴薯3, 玉葱1, 根菜1, 塩1",
+		"season": "冬",
+		"lockType": "Ventania",
+		"isAdded": false
+	},
+	{
+		"iconId": 26,
+		"name": "団子",
+		"category": "菓子",
+		"foodCandidate": [],
+		"recipe": "麦1, 豆1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 27,
+		"name": "蓬団子",
+		"category": "菓子",
+		"foodCandidate": [],
+		"recipe": "麦1, 豆1, 蓬1",
+		"season": "春",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 28,
+		"name": "胡麻団子",
+		"category": "菓子",
+		"foodCandidate": [],
+		"recipe": "麦1, 豆1, 胡麻1",
+		"season": "秋",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 29,
+		"name": "干柿",
+		"category": "菓子",
+		"foodCandidate": [],
+		"recipe": "干柿1",
+		"season": "冬",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 95,
+		"name": "削氷",
+		"category": "菓子",
+		"foodCandidate": [],
+		"recipe": "氷1",
+		"season": "夏",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 30,
+		"name": "煎餅",
+		"category": "菓子",
+		"foodCandidate": [],
+		"recipe": "醤油1, 餅1, <酒>1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 96,
+		"name": "蕎麦掻",
+		"category": "菓子",
+		"foodCandidate": [],
+		"recipe": "豆1, 蕎麦1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 31,
+		"name": "粢",
+		"category": "菓子",
+		"foodCandidate": [],
+		"recipe": "粢1",
+		"season": "冬",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 26,
+		"name": "饅頭",
+		"category": "菓子",
+		"foodCandidate": [],
+		"recipe": "麦2, 豆2, 砂糖1, 油1",
+		"season": "秋",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 32,
+		"name": "巻餅",
+		"category": "菓子",
+		"foodCandidate": [],
+		"recipe": "麦1, 砂糖1, 胡麻1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 33,
+		"name": "焼味噌",
+		"category": "菓子",
+		"foodCandidate": [],
+		"recipe": "大蒜1, 葱1, 味噌1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 34,
+		"name": "水",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 34,
+		"name": "清水",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "清水1",
+		"season": "夏",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 34,
+		"name": "名水",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "名水1",
+		"season": "夏",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 35,
+		"name": "茶",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "茶1",
+		"season": "春",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 35,
+		"name": "玄米茶",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "玄米1, 茶1",
+		"season": "秋",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 35,
+		"name": "毒矯茶",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "毒矯2",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 35,
+		"name": "昆布茶",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "昆布1",
+		"season": "冬",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 35,
+		"name": "梅昆布茶",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "梅1, 昆布1",
+		"season": "春",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 35,
+		"name": "福茶",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "昆布1, 茶1, 梅干1, 名水1",
+		"season": "冬",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 36,
+		"name": "口噛酒",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "口噛酒1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 36,
+		"name": "濁酒",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "濁酒1",
+		"season": "冬",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 36,
+		"name": "甘酒",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "甘酒1",
+		"season": "夏",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 97,
+		"name": "清酒",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "清酒1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 97,
+		"name": "薬酒",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "薬酒1",
+		"season": "春",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 37,
+		"name": "吟醸",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "吟醸1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 38,
+		"name": "大吟醸",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "大吟醸1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 97,
+		"name": "**焼酎",
+		"category": "飲物",
+		"foodCandidate": [
+			"<穀>",
+			"蕎麦",
+			"豆"
+		],
+		"recipe": "焼酎1",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 39,
+		"name": "ビール",
+		"category": "飲物",
+		"foodCandidate": [],
+		"recipe": "ビール1",
+		"season": "夏",
+		"lockType": "Ventania",
+		"isAdded": false
+	},
+	{
+		"iconId": 98,
+		"name": "**の水",
+		"category": "飲物",
+		"foodCandidate": [
+			"<粉>"
+		],
+		"recipe": "**2",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	},
+	{
+		"iconId": 99,
+		"name": "**の秘薬",
+		"category": "飲物",
+		"foodCandidate": [
+			"<薄片>"
+		],
+		"recipe": "酢3, **1, 秘薬の素2",
+		"season": "",
+		"lockType": "",
+		"isAdded": false
+	}
+]
