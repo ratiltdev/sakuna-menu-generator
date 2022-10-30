@@ -1,7 +1,7 @@
 import { DishName } from "../valueobject/dishname";
 import { DishRecipe } from "../valueobject/dishrecipe";
+import { FoodName } from "../valueobject/foodname";
 import { IconId } from "../valueobject/iconid";
-import { Food } from "./food";
 
 /**
  * 料理情報
@@ -12,7 +12,7 @@ export class DishInfo {
   private readonly iconId: IconId;
   private readonly name: DishName;
   private readonly category: DishCategory;
-  private readonly foodCandidate: Array<Food>;
+  private readonly foodCandidate: Array<FoodName>;
   private readonly recipe: DishRecipe;
   private readonly season: Season;
   private readonly unlockType: UnlockType;
@@ -21,7 +21,7 @@ export class DishInfo {
   public get IconId(): IconId { return this.iconId; }
   public get Name(): DishName { return this.name; }
   public get Category(): DishCategory { return this.category; }
-  public get FoodCandidate(): Array<Food> { return this.foodCandidate; }
+  public get FoodCandidate(): Array<FoodName> { return this.foodCandidate; }
   public get Recipe(): DishRecipe { return this.recipe; }
   public get Season(): Season { return this.season; }
   public get UnlockType(): UnlockType { return this.unlockType; }
@@ -31,7 +31,7 @@ export class DishInfo {
     iconId: IconId,
     name: DishName,
     category: DishCategory,
-    foodCandidate: Array<Food>,
+    foodCandidate: Array<FoodName>,
     recipe: DishRecipe,
     season: Season,
     unlockType: UnlockType,
