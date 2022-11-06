@@ -18,7 +18,7 @@ export const useRandom = (seed: number) => {
   const random = (min: number, max: number): number => {
     const next: Props = nextProps(props);
     setProps(next);
-    return setLimit(next.d, min, max);
+    return nextInt(next, min, max);
   }
 
   return random;
@@ -34,6 +34,6 @@ const nextProps = (props: Props): Props => {
   }
 };
 
-const setLimit = (random: number, min: number, max: number): number => {
-  return min + ((Math.abs(random)) % (max + 1 - min));
+const nextInt = (props: Props, min: number, max: number): number => {
+  return min + ((Math.abs(props.d)) % (max + 1 - min));
 }
