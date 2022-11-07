@@ -1,27 +1,23 @@
 import React from "react";
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
-import { Category, toCategory } from "../domain/model/category";
-import { DishFilterCondition } from "../domain/model/dishesFilterCondition";
+import { Category } from "../domain/model/category";
+import { DishFilterCondition } from "../hooks/useCondition";
 
 type Props = {
-  id: number,
-  dishCond: DishFilterCondition,
-  onChange: (condition: DishFilterCondition) => void,
+  condition: DishFilterCondition,
+  onChange: (e: SelectChangeEvent, id: number) => void,
 }
 
-export const CategorySelect: React.FC<Props> = ({id, dishCond, onChange}) => {
-  const handleChange = (e: SelectChangeEvent) =>
-    onChange({...dishCond, category: toCategory(e.target.value)});
-
+export const CategorySelect: React.FC<Props> = ({condition, onChange}) => {
   return (
     <FormControl fullWidth>
-      <InputLabel id={`category-select-label-${id}`}>カテゴリ</InputLabel>
+      <InputLabel id={`category-select-label-${condition.id}`}>カテゴリ</InputLabel>
       <Select
-        labelId={`category-select-label-${id}`}
-        id={`category-select-${id}`}
+        labelId={`category-select-label-${condition.id}`}
+        id={`category-select-${condition.id}`}
         label="カテゴリ"
-        value={dishCond.category}
-        onChange={handleChange}
+        value={condition.category}
+        onChange={(e) => onChange(e, condition.id)}
       >
         <MenuItem value="">指定なし</MenuItem>
         <MenuItem value={Category.MAIN}>{Category.MAIN}</MenuItem>

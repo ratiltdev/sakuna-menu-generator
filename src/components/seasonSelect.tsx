@@ -1,27 +1,23 @@
 import React from "react";
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
-import { Season, toSeason } from "../domain/model/season";
-import { DishFilterCondition } from "../domain/model/dishesFilterCondition";
+import { Season } from "../domain/model/season";
+import { DishFilterCondition } from "../hooks/useCondition";
 
 type Props = {
-  id: number,
-  dishCond: DishFilterCondition,
-  onChange: (condition: DishFilterCondition) => void,
+  condition: DishFilterCondition,
+  onChange: (e: SelectChangeEvent, id: number) => void,
 }
 
-export const SeasonSelect: React.FC<Props> = ({id, dishCond, onChange}) => {
-  const handleChange = (e: SelectChangeEvent) =>
-    onChange({...dishCond, season: toSeason(e.target.value)});
-
+export const SeasonSelect: React.FC<Props> = ({condition, onChange}) => {
   return (
     <FormControl fullWidth>
-      <InputLabel id={`season-select-label-${id}`}>旬</InputLabel>
+      <InputLabel id={`season-select-label-${condition.id}`}>旬</InputLabel>
       <Select
-        labelId={`season-select-label-${id}`}
-        id={`season-select-${id}`}
+        labelId={`season-select-label-${condition.id}`}
+        id={`season-select-${condition.id}`}
         label="旬"
-        value={dishCond.season}
-        onChange={handleChange}
+        value={condition.season}
+        onChange={(e) => onChange(e, condition.id)}
       >
         <MenuItem value="">指定なし</MenuItem>
         <MenuItem value={Season.SPRING}>{Season.SPRING}</MenuItem>
