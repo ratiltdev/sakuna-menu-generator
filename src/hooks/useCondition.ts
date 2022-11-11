@@ -1,5 +1,5 @@
 import { SelectChangeEvent } from "@mui/material";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { Category, toCategory } from "../domain/model/category";
 import { Season, toSeason } from "../domain/model/season";
 
@@ -17,6 +17,9 @@ export type DishFilterCondition = {
  */
 export type MenuFilterCondition = {
   dishConditions: Array<DishFilterCondition>,
+  isIncludeVentania: boolean,
+  isIncludeHotPot: boolean,
+  isIncludeAdded: boolean,
 }
 
 export const useCondition = () => {
@@ -27,6 +30,9 @@ export const useCondition = () => {
       {id: 3, category: Category.NONE, season: Season.NONE},
       {id: 4, category: Category.NONE, season: Season.NONE},
     ],
+    isIncludeVentania: false,
+    isIncludeHotPot: false,
+    isIncludeAdded: true,
   });
 
   /**
@@ -35,7 +41,7 @@ export const useCondition = () => {
    * @param id - DishCondition.id
    */
   const onChangeCategory = (e: SelectChangeEvent, id: number): void => {
-    setCondition((prevMenuCond) => {
+    setCondition(prevMenuCond => {
       return {
         ...prevMenuCond,
         dishConditions: prevMenuCond.dishConditions.map(prevDishCond =>
@@ -53,7 +59,7 @@ export const useCondition = () => {
    * @param id - DishCondition.id
    */
   const onChangeSeason = (e: SelectChangeEvent, id: number): void => {
-    setCondition((prevMenuCond) => {
+    setCondition(prevMenuCond => {
       return {
         ...prevMenuCond,
         dishConditions: prevMenuCond.dishConditions.map(prevDishCond =>
@@ -64,6 +70,43 @@ export const useCondition = () => {
       }
     });
   }
+
+  /**
+   * VentaniaCheckbox変更時にMenuConditionを変更する
+   * @param e - ChangeEvent
+   */
+  const onChangeVentania = (e: ChangeEvent<HTMLInputElement>): void => {
+    setCondition(prevMenuCond => {
+      return {...prevMenuCond, isIncludeVentania: e.target.checked}
+    })
+  }
+
+  /**
+   * HotPotCheckbox変更時にMenuConditionを変更する
+   * @param e - ChangeEvent
+   */
+   const onChangeHotPot = (e: ChangeEvent<HTMLInputElement>): void => {
+    setCondition(prevMenuCond => {
+      return {...prevMenuCond, isIncludeHotPot: e.target.checked}
+    })
+  }
+
+  /**
+   * VersionCheckbox変更時にMenuConditionを変更する
+   * @param e - ChangeEvent
+   */
+   const onChangeAdded = (e: ChangeEvent<HTMLInputElement>): void => {
+    setCondition(prevMenuCond => {
+      return {...prevMenuCond, isIncludeAdded: e.target.checked}
+    })
+  }
   
-  return {condition, onChangeCategory, onChangeSeason};
+  return {
+    condition,
+    onChangeCategory,
+    onChangeSeason,
+    onChangeVentania,
+    onChangeHotPot,
+    onChangeAdded,
+  };
 }
