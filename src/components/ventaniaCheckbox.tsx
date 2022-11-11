@@ -6,16 +6,14 @@ type Props = {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-export const VentaniaCheckbox: React.FC<Props> = ({checked, onChange}) => {
-  return (
-    <FormGroup>
-      <FormControlLabel
-        control={
-          <Checkbox
-            checked={checked}
-            onChange={onChange}
-          />}
-        label="ベンタニア料理" />
-    </FormGroup>
-  )
-}
+export const VentaniaCheckbox: React.FC<Props> = ({checked, onChange}) => (
+  <FormGroup>
+    <FormControlLabel
+      control={
+        <Checkbox
+          checked={checked}
+          onChange={onChange}
+        />}
+      label="ベンタニア料理" />
+  </FormGroup>
+)
