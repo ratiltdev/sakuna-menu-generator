@@ -1,8 +1,9 @@
-import type { NextPage } from 'next'
+import { Button } from '@mui/material'
+import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
-import { Form } from '../components/form'
+import { Form } from '../src/components/form'
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <Form></Form>
+        <Button variant="contained" onClick={e => console.log("")}>選出</Button>
       </main>
 
       <footer className={styles.footer}>
