@@ -1,49 +1,42 @@
-import { Container, SelectChangeEvent, Stack } from "@mui/material";
-import React, { ChangeEvent } from "react";
-import { MenuFilterCondition } from "../hooks/useCondition";
+import React from "react";
+import { Container, Stack } from "@mui/material";
+import { ConditionFormProps } from "../hooks/useCondition";
 import { VersionCheckbox } from "./versionCheckbox";
 import { CategorySelect } from "./categorySelect";
 import { HotPotCheckbox } from "./hotpotCheckbox";
 import { SeasonSelect } from "./seasonSelect";
 import { VentaniaCheckbox } from "./ventaniaCheckbox";
 
-type ConditionFormProps = {
-  condition: MenuFilterCondition,
-  onChangeCategory: (e: SelectChangeEvent, id: number) => void,
-  onChangeSeason: (e: SelectChangeEvent, id: number) => void,
-  onChangeVentania: (e: ChangeEvent<HTMLInputElement>) => void,
-  onChangeHotPot: (e: ChangeEvent<HTMLInputElement>) => void,
-  onChangeAdded: (e: ChangeEvent<HTMLInputElement>) => void,
+type Props = {
+  props: ConditionFormProps,
 }
 
-export const ConditionForm: React.FC<ConditionFormProps> = (
-  {condition, onChangeCategory, onChangeSeason, onChangeVentania, onChangeHotPot, onChangeAdded}
-) => {
+export const ConditionForm: React.FC<Props> = ({props}) => {
   return (
     <Container>
-      {condition.dishConditions.map(dishCond => (
+      {props.condition.dishConditions.map(dishCond => (
         <Stack direction={"row"} spacing={2} key={`stack-${dishCond.id}`}>
           <CategorySelect
             condition={dishCond}
-            onChange={onChangeCategory}
+            onChange={props.onChangeCategory}
           />
           <SeasonSelect
             condition={dishCond}
-            onChange={onChangeSeason}
+            onChange={props.onChangeSeason}
           />
         </Stack>
       ))}
       <VentaniaCheckbox
-        checked={condition.isIncludeVentania}
-        onChange={onChangeVentania}
+        checked={props.condition.isIncludeVentania}
+        onChange={props.onChangeVentania}
       />
       <HotPotCheckbox
-        checked={condition.isIncludeHotPot}
-        onChange={onChangeHotPot}
+        checked={props.condition.isIncludeHotPot}
+        onChange={props.onChangeHotPot}
       />
       <VersionCheckbox
-        checked={condition.isIncludeAdded}
-        onChange={onChangeAdded}
+        checked={props.condition.isIncludeAdded}
+        onChange={props.onChangeAdded}
       />
     </Container>
   )

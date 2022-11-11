@@ -22,7 +22,19 @@ export type MenuFilterCondition = {
   isIncludeAdded: boolean,
 }
 
-export const useCondition = () => {
+/**
+ * Form受渡し用
+ */
+export type ConditionFormProps = {
+  condition: MenuFilterCondition,
+  onChangeCategory: (e: SelectChangeEvent, id: number) => void,
+  onChangeSeason: (e: SelectChangeEvent, id: number) => void,
+  onChangeVentania: (e: ChangeEvent<HTMLInputElement>) => void,
+  onChangeHotPot: (e: ChangeEvent<HTMLInputElement>) => void,
+  onChangeAdded: (e: ChangeEvent<HTMLInputElement>) => void,
+}
+
+export const useCondition = (): ConditionFormProps => {
   const [condition, setCondition] = useState<MenuFilterCondition>({
     dishConditions: [
       {id: 1, category: Category.NONE, season: Season.NONE},
