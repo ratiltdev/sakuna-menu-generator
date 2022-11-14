@@ -13,14 +13,14 @@ type Props = {
 
 export const ConditionForm: React.FC<Props> = ({props}) => (
   <Container>
-    {props.condition.dishConditions.map(dishCond => (
-      <Stack direction={"row"} spacing={2} key={`stack-${dishCond.id}`}>
+    {props.condition.cookingConditions.map(cookingCond => (
+      <Stack direction={"row"} spacing={2} key={`stack-${cookingCond.id}`}>
         <CategorySelect
-          condition={dishCond}
+          condition={cookingCond}
           onChange={props.onChangeCategory}
         />
         <SeasonSelect
-          condition={dishCond}
+          condition={cookingCond}
           onChange={props.onChangeSeason}
         />
       </Stack>

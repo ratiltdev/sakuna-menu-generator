@@ -1,10 +1,10 @@
 import React from "react";
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
-import { Season } from "../domain/model/season";
-import { DishFilterCondition } from "../hooks/useCondition";
+import { Season } from "../domain/entities/cookingInfo";
+import { CookingPickCondition } from "../domain/entities/pickCondition";
 
 type Props = {
-  condition: DishFilterCondition,
+  condition: CookingPickCondition,
   onChange: (e: SelectChangeEvent, id: number) => void,
 }
 

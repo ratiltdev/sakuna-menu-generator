@@ -1,32 +1,13 @@
 import { SelectChangeEvent } from "@mui/material";
 import { ChangeEvent, useState } from "react";
-import { Category, toCategory } from "../domain/model/category";
-import { Season, toSeason } from "../domain/model/season";
-
-/**
- * 料理1枠の選出条件
- */
-export type DishFilterCondition = {
-  id: number,
-  category: Category,
-  season: Season,
-}
-
-/**
- * 献立全体の選出条件
- */
-export type MenuFilterCondition = {
-  dishConditions: Array<DishFilterCondition>,
-  isIncludeVentania: boolean,
-  isIncludeHotPot: boolean,
-  isIncludeAdded: boolean,
-}
+import { Category, toCategory, Season, toSeason } from "../domain/entities/cookingInfo";
+import { MenuPickCondition } from "../domain/entities/pickCondition";
 
 /**
  * Form受渡し用
  */
 export type ConditionFormProps = {
-  condition: MenuFilterCondition,
+  condition: MenuPickCondition,
   onChangeCategory: (e: SelectChangeEvent, id: number) => void,
   onChangeSeason: (e: SelectChangeEvent, id: number) => void,
   onChangeVentania: (e: ChangeEvent<HTMLInputElement>) => void,
@@ -35,8 +16,8 @@ export type ConditionFormProps = {
 }
 
 export const useCondition = (): ConditionFormProps => {
-  const [condition, setCondition] = useState<MenuFilterCondition>({
-    dishConditions: [
+  const [condition, setCondition] = useState<MenuPickCondition>({
+    cookingConditions: [
       {id: 1, category: Category.NONE, season: Season.NONE},
       {id: 2, category: Category.NONE, season: Season.NONE},
       {id: 3, category: Category.NONE, season: Season.NONE},
@@ -48,36 +29,36 @@ export const useCondition = (): ConditionFormProps => {
   });
 
   /**
-   * CategorySelect変更時にIDの一致するDishConditionを差替える
+   * CategorySelect変更時にIDの一致するCookingConditionを差替える
    * @param e - SelectChangeEvent
-   * @param id - DishCondition.id
+   * @param id - CookingCondition.id
    */
   const onChangeCategory = (e: SelectChangeEvent, id: number): void => {
     setCondition(prevMenuCond => {
       return {
         ...prevMenuCond,
-        dishConditions: prevMenuCond.dishConditions.map(prevDishCond =>
-          prevDishCond.id === id ?
-            {...prevDishCond, category: toCategory(e.target.value)} :
-            prevDishCond
+        cookingConditions: prevMenuCond.cookingConditions.map(prevCookingCond =>
+          prevCookingCond.id === id ?
+            {...prevCookingCond, category: toCategory(e.target.value)} :
+            prevCookingCond
         )
       }
     });
   }
   
   /**
-   * SeasonSelect変更時にIDの一致するDishConditionを差替える
+   * SeasonSelect変更時にIDの一致するCookingConditionを差替える
    * @param e - SelectChangeEvent
-   * @param id - DishCondition.id
+   * @param id - CookingCondition.id
    */
   const onChangeSeason = (e: SelectChangeEvent, id: number): void => {
     setCondition(prevMenuCond => {
       return {
         ...prevMenuCond,
-        dishConditions: prevMenuCond.dishConditions.map(prevDishCond =>
-          prevDishCond.id === id ?
-            {...prevDishCond, season: toSeason(e.target.value)} :
-            prevDishCond
+        cookingConditions: prevMenuCond.cookingConditions.map(prevCookingCond =>
+          prevCookingCond.id === id ?
+            {...prevCookingCond, season: toSeason(e.target.value)} :
+            prevCookingCond
         )
       }
     });

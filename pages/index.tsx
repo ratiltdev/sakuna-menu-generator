@@ -2,10 +2,17 @@ import { Button } from '@mui/material'
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../../styles/Home.module.css'
+import styles from '../styles/Home.module.css'
 import { Form } from '../src/components/form'
+import { CookingInfo } from '../src/domain/entities/cookingInfo'
+import { cookingInfoAdapter } from '../src/adapters/cookingInfoAdapter'
+import { fetchCookingInfo } from '../src/useCases/fetchCookingInfo'
 
-const Home: NextPage = () => {
+type Props = {
+  cooking: ReadonlyArray<CookingInfo>
+}
+
+const Home: NextPage<Props> = (props) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -16,7 +23,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <Form></Form>
-        <Button variant="contained" onClick={e => console.log("")}>選出</Button>
+        <Button variant="contained" onClick={e => console.log(props.cooking)}>選出</Button>
       </main>
 
       <footer className={styles.footer}>
@@ -33,6 +40,15 @@ const Home: NextPage = () => {
       </footer>
     </div>
   )
+}
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+
+  return {
+    props: {
+      cooking: fetchCookingInfo(cookingInfoAdapter())
+    }
+  }
 }
 
 export default Home
