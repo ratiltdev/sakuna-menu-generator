@@ -1,18 +1,17 @@
-import { Button } from '@mui/material'
-import type { GetStaticProps, NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { Form } from '../src/components/form'
-import { CookingInfo } from '../src/domain/entities/cookingInfo'
-import { cookingInfoAdapter } from '../src/adapters/cookingInfoAdapter'
-import { fetchCookingInfo } from '../src/useCases/fetchCookingInfo'
+import { CookingDictionary } from '../src/domain/cookingDictionary'
+import { fetchCookingDictionary } from "../src/adapters/cookingAdapter"
+import { AdobeFont } from '../src/components/adobeFont'
 
 type Props = {
-  cooking: ReadonlyArray<CookingInfo>
+  list: CookingDictionary
 }
 
-const Home: NextPage<Props> = (props) => {
+const Home: NextPage<Props> = ({list}) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -20,10 +19,10 @@ const Home: NextPage<Props> = (props) => {
         <meta name="description" content="天穂のサクナヒメ - 献立選出" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <AdobeFont kitId='hfd7jpz' scriptTimeout={3000} async={true} />
 
       <main className={styles.main}>
-        <Form></Form>
-        <Button variant="contained" onClick={e => console.log(props.cooking)}>選出</Button>
+        <Form list={list}></Form>
       </main>
 
       <footer className={styles.footer}>
@@ -42,13 +41,11 @@ const Home: NextPage<Props> = (props) => {
   )
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-
-  return {
-    props: {
-      cooking: fetchCookingInfo(cookingInfoAdapter())
-    }
+export const getServerSideProps: GetServerSideProps<Props> = async () => ({
+  props: {
+    list: fetchCookingDictionary()
   }
 }
+)
 
 export default Home

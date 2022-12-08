@@ -1,7 +1,7 @@
 /**
  * 料理
  */
-export type CookingInfo = {
+export type Cooking = {
   iconId: string,
   name: string,
   category: Category,
@@ -11,6 +11,21 @@ export type CookingInfo = {
   lockType: LockType,
   addVersion: AddVersion,
 }
+
+/**
+ * 食材の決定
+ * @param cooking - Cooking
+ * @param food - 選択食材
+ * @returns - Cooking
+ */
+export const cook = (cooking: Cooking, food: string): Cooking => (
+  cooking.foodCandidates.includes(food) ?
+    {...cooking,
+      name: cooking.name.replace("**", food),
+      recipe: cooking.recipe.replace("**", food)
+    } :
+    cooking
+);
 
 /**
  * 料理カテゴリ

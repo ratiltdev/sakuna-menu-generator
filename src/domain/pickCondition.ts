@@ -1,4 +1,4 @@
-import { Category, Season } from "./cookingInfo"
+import { Category, Season } from "./cooking"
 
 /**
  * 料理1枠の選出条件

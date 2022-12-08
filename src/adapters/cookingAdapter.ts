@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
-import { pipe } from "fp-ts/function";
-import { CookingInfo, toCategory, toSeason, toLockType, toAddVersion } from "../domain/entities/cookingInfo";
+import { flow } from "fp-ts/function";
+import { toCategory, toSeason, toLockType, toAddVersion } from "../domain/cooking";
+import { CookingDictionary } from "../domain/cookingDictionary";
 
 type CookingJson = {
   iconId: string,
@@ -14,22 +15,15 @@ type CookingJson = {
   addVersion?: string,
 };
 
-export interface CookingInfoAdapter {
-  fetch: () => ReadonlyArray<CookingInfo>
-};
+export const fetchCookingDictionary = (): CookingDictionary => (
+  flow(
+    readFileSync,
+    parseToJson,
+    jsonToCooking
+  )(filePath)
+);
 
-export const cookingInfoAdapter = (): CookingInfoAdapter => ({
-  fetch: (): ReadonlyArray<CookingInfo> => (
-    pipe(
-      filePath,
-      readFileSync,
-      parseToJson,
-      jsonToCooking
-    )
-  )
-});
-
-const filePath: string = path.join(process.cwd(), "src", "adapters", "cookingInfo.json");
+const filePath: string = path.join(process.cwd(), "public", "cookingInfo.json");
 
 const readFileSync = (path: string): string => {
   try {
@@ -47,7 +41,7 @@ const parseToJson = (context: string): ReadonlyArray<CookingJson> => {
   }
 };
 
-const jsonToCooking = (json: ReadonlyArray<CookingJson>): ReadonlyArray<CookingInfo> => (
+const jsonToCooking = (json: ReadonlyArray<CookingJson>): CookingDictionary => (
   json.map(info => (
     {
       iconId: info.iconId,

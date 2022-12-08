@@ -1,7 +1,7 @@
 import React from "react";
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
-import { Season } from "../domain/entities/cookingInfo";
-import { CookingPickCondition } from "../domain/entities/pickCondition";
+import { Season } from "../domain/cooking";
+import { CookingPickCondition } from "../domain/pickCondition";
 
 type Props = {
   condition: CookingPickCondition,

@@ -1,7 +1,7 @@
 import { SelectChangeEvent } from "@mui/material";
 import { ChangeEvent, useState } from "react";
-import { Category, toCategory, Season, toSeason } from "../domain/entities/cookingInfo";
-import { MenuPickCondition } from "../domain/entities/pickCondition";
+import { Category, toCategory, Season, toSeason } from "../domain/cooking";
+import { MenuPickCondition } from "../domain/pickCondition";
 
 /**
  * Form受渡し用
