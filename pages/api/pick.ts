@@ -1,27 +1,40 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { pipe } from "fp-ts/function";
-import { querySchema, toPickParams } from "../../src/pickService/adapters/querySchema";
-import { pickResult } from "../../src/pickService/useCases/pickMenuUseCase";
+import { QueryParams, querySchema, toPickParams } from "../../src/pickService/adapters/querySchema";
+import { pickMenu } from "../../src/pickService/useCases/pickMenuUseCase";
 import { createCookingCatalogAdapter } from "../../src/pickService/adapters/cookingCatalogAdapter";
+import { Cooking } from "../../src/pickService/domain/cooking";
+
+type Result = {
+  condition: QueryParams,
+  result: ReadonlyArray<Cooking | undefined>,
+};
+
+type RequestError = {
+  message: string,
+  issues: object,
+};
 
 const handler = (
   request: NextApiRequest,
-  response: NextApiResponse<any>
+  response: NextApiResponse<Result | RequestError>
 ): void => (
   pipe(
     request.query,
     querySchema.safeParse,
-    (result) => result.success ?
+    (parse) => parse.success ?
       pipe(
-        result.data,
+        parse.data,
         toPickParams,
-        pickResult(
-          createCookingCatalogAdapter()
-        ),
+        pickMenu(createCookingCatalogAdapter()),
+        (cooking) => ({
+          condition: parse.data,
+          result: cooking,
+        }),
         response.status(200).json
       ) :
       response.status(400).json(
-        {message: "Bad Request", issues: result.error.flatten()}
+        {message: "Bad Request", issues: parse.error.flatten()}
       )
   )
 );

@@ -8,31 +8,22 @@ import { cook, CookingInfo } from "../domain/cookingInfo";
 import { RandomPicker } from "../domain/randomPicker";
 
 /**
- * 選出結果
- */
-export type Result = {
-  seed: number,
-  cooking: ReadonlyArray<Cooking | undefined>,
-}
-
-/**
  * 献立を選出する
  * @param cookingCatalogAdapter 
  * @param requestAdapter 
  * @returns 
  */
-export const pickResult = (
+export const pickMenu = (
   cookingCatalogAdapter: CookingCatalogAdapter
 ) => (
   pickParams: PickParams
-): Result => ({
-    seed: pickParams.randomPicker.seed,
-    cooking: pickMenu(
-      cookingCatalogAdapter.fetchCookingCatalog(),
-      pickParams.condition,
-      pickParams.randomPicker
-    )
-  });
+): ReadonlyArray<Cooking | undefined> => (
+  pickRandomMenu(
+    cookingCatalogAdapter.fetchCookingCatalog(),
+    pickParams.condition,
+    pickParams.randomPicker
+  )
+);
 
 /**
  * 指定条件で候補を絞り込んだ後、ランダムに献立を選択する
@@ -41,7 +32,7 @@ export const pickResult = (
  * @param randomPicker 
  * @returns 
  */
-const pickMenu = (
+const pickRandomMenu = (
   catalog: CookingCatalog,
   condition: PickMenuCondition,
   randomPicker: RandomPicker
@@ -49,7 +40,7 @@ const pickMenu = (
   pipe(
     condition,
     catalog.filterByMenuCondition,
-    (filterCatalog) => pickCooking(filterCatalog, randomPicker),
+    (filterCatalog) => pickRandomCooking(filterCatalog, randomPicker),
     (pickCooking) => condition.cookingConditions.map(cookingCond => pickCooking(cookingCond))
   )
 );
@@ -61,7 +52,7 @@ const pickMenu = (
  * @param condition 料理1枠の選出条件
  * @returns ランダムに選択された料理情報
  */
-const pickCooking = (
+const pickRandomCooking = (
   catalog: CookingCatalog,
   randomPicker: RandomPicker
 ) => (
@@ -75,7 +66,7 @@ const pickCooking = (
       pipe(
         list,
         randomPicker.pick,
-        pickFood(randomPicker)
+        pickRandomFood(randomPicker)
       ) :
       undefined
   )
@@ -87,7 +78,7 @@ const pickCooking = (
  * @param info 料理情報 
  * @returns ランダムに食材を選択して決定した料理
  */
-const pickFood = (randomPicker: RandomPicker) => (info: CookingInfo): Cooking => (
+const pickRandomFood = (randomPicker: RandomPicker) => (info: CookingInfo): Cooking => (
   info.foodCandidates.length > 0 ?
     pipe(
       info.foodCandidates,

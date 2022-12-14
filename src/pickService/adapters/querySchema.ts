@@ -33,9 +33,8 @@ const categorySchema = z.preprocess(
     .int()
     .min(0)
     .max(5)
-    .transform(v => allCategory[v])
 )
-.default(Category.NONE);
+.default(0);
 
 /**
  * Schema - season
@@ -48,9 +47,8 @@ const seasonSchema = z.preprocess(
     .int()
     .min(0)
     .max(4)
-    .transform(v => allSeason[v])
 )
-.default(Season.NONE);
+.default(0);
 
 /**
  * Schema - ventania
@@ -63,9 +61,8 @@ const ventaniaSchema = z.preprocess(
     .int()
     .min(0)
     .max(1)
-    .transform(v => !!v)
 )
-.default(false);
+.default(0);
 
 /**
  * Schema - hotpot
@@ -78,9 +75,8 @@ const ventaniaSchema = z.preprocess(
     .int()
     .min(0)
     .max(1)
-    .transform(v => !!v)
 )
-.default(false);
+.default(0);
 
 /**
  * Schema - added
@@ -93,9 +89,8 @@ const ventaniaSchema = z.preprocess(
     .int()
     .min(0)
     .max(1)
-    .transform(v => !!v)
 )
-.default(true);
+.default(1);
 
 /**
  * Schema - NextApiRequest.query
@@ -115,7 +110,7 @@ export const querySchema = z.object({
   a: addedSchema,
 });
 
-type QueryParams = z.infer<typeof querySchema>;
+export type QueryParams = z.infer<typeof querySchema>;
 
 export type PickParams = {
   condition: PickMenuCondition,
@@ -139,14 +134,14 @@ export const toPickParams = (params: QueryParams): PickParams => ({
  */
 const toCondition = (params: QueryParams): PickMenuCondition => ({
   cookingConditions: [
-    {category: params.c1, season: params.s1},
-    {category: params.c2, season: params.s2},
-    {category: params.c3, season: params.s3},
-    {category: params.c4, season: params.s4}
+    {category: allCategory[params.c1], season: allSeason[params.s1]},
+    {category: allCategory[params.c2], season: allSeason[params.s2]},
+    {category: allCategory[params.c3], season: allSeason[params.s3]},
+    {category: allCategory[params.c4], season: allSeason[params.s4]},
   ],
-  isIncludeVentania: params.v,
-  isIncludeHotPot: params.h,
-  isIncludeAdded: params.a,
+  isIncludeVentania: !!params.v,
+  isIncludeHotPot: !!params.h,
+  isIncludeAdded: !!params.a,
 });
 
 /**
