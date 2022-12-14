@@ -4,7 +4,6 @@ import { Category, Season } from "./cooking"
  * 料理1枠の選出条件
  */
  export type PickCookingCondition = {
-  id: number,
   category: Category,
   season: Season,
 }

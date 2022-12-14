@@ -1,11 +1,10 @@
 /**
- * 料理
+ * 食材確定後の料理
  */
  export type Cooking = {
   iconId: string,
   name: string,
   category: Category,
-  foodCandidates: ReadonlyArray<string>,
   recipe: string,
   season: Season,
   lockType: LockType,
