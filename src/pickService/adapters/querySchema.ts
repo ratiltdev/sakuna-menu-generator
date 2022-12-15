@@ -1,7 +1,7 @@
 import { pipe } from "fp-ts/function";
 import { z } from "zod";
 import { PickMenuCondition } from "../domain/condition";
-import { allCategory, allSeason, Category, Season } from "../domain/cooking";
+import { allCategory, allSeason } from "../domain/cooking";
 import { createRandomPicker, RandomPicker } from "../domain/randomPicker";
 
 /**
@@ -14,12 +14,6 @@ const seedSchema = z.preprocess(
     .number()
     .positive()
     .int()
-)
-.default(
-  pipe(
-    Math.random() * 10000000000,
-    Math.floor
-  )
 );
 
 /**
@@ -95,22 +89,52 @@ const ventaniaSchema = z.preprocess(
 /**
  * Schema - NextApiRequest.query
  */
-export const querySchema = z.object({
-  seed: seedSchema,
-  c1: categorySchema,
-  c2: categorySchema,
-  c3: categorySchema,
-  c4: categorySchema,
-  s1: seasonSchema,
-  s2: seasonSchema,
-  s3: seasonSchema,
-  s4: seasonSchema,
-  v: ventaniaSchema,
-  h: hotpotSchema,
-  a: addedSchema,
-});
+export const createQuerySchema = () => (
+  // 
+  z.object({
+    seed: seedSchema.default(createInitialSeed()),
+    c1: categorySchema,
+    c2: categorySchema,
+    c3: categorySchema,
+    c4: categorySchema,
+    s1: seasonSchema,
+    s2: seasonSchema,
+    s3: seasonSchema,
+    s4: seasonSchema,
+    v: ventaniaSchema,
+    h: hotpotSchema,
+    a: addedSchema,
+  })
+);
 
-export type QueryParams = z.infer<typeof querySchema>;
+/**
+ * 初期シード値を生成する
+ * @returns 正の整数乱数
+ */
+const createInitialSeed = (): number => (
+  pipe(
+    Math.random() * 1000000000,
+    Math.floor
+  )
+);
+
+/**
+ * NextApiRequest.queryの型定義
+ */
+export type QueryParams = {
+  seed: number,
+  c1: number,
+  c2: number,
+  c3: number,
+  c4: number,
+  s1: number,
+  s2: number,
+  s3: number,
+  s4: number,
+  v: number,
+  h: number,
+  a: number;
+}
 
 export type PickParams = {
   condition: PickMenuCondition,
