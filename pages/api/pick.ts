@@ -6,7 +6,7 @@ import { createCookingCatalogAdapter } from "../../src/pickService/adapters/cook
 import { Cooking } from "../../src/pickService/domain/cooking";
 
 type Result = {
-  condition: QueryParams,
+  params: QueryParams,
   result: ReadonlyArray<Cooking | undefined>,
 };
 
@@ -28,7 +28,7 @@ const handler = (
         toPickParams,
         pickMenu(createCookingCatalogAdapter()),
         (cooking) => ({
-          condition: parse.data,
+          params: parse.data,
           result: cooking,
         }),
         response.status(200).json
