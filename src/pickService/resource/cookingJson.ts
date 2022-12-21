@@ -516,7 +516,8 @@ export const cookingJson: ReadonlyArray<CookingJson> = [
 		"name": "エルテンスープ",
 		"category": "汁",
 		"recipe": "卵×1, 豆×1, 馬鈴薯×1, 玉葱×1, 豚肉の燻製×1",
-		"season": "冬"
+		"season": "冬",
+		"lockType": "Ventania"
 	},
 	{
 		"iconId": 10,
