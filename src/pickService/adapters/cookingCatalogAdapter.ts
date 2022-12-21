@@ -1,8 +1,7 @@
-import { pipe } from "fp-ts/function";
 import { toAddVersion, toCategory, toLockType, toSeason } from "../domain/cooking";
 import { CookingCatalog, createCookingCatalog } from "../domain/cookingCatalog";
 import { CookingInfo } from "../domain/cookingInfo";
-import { cookingJson, CookingJson } from "../resource/cookingJson";
+import { cookingJson, CookingJson, daiginjoJson } from "../resource/cookingJson";
 
 /**
  * 料理カタログ取得用Adapter
@@ -16,11 +15,7 @@ export interface CookingCatalogAdapter {
  * @returns 
  */
 export const createCookingCatalogAdapter = (): CookingCatalogAdapter => ({
-  fetchCookingCatalog: (): CookingCatalog => pipe(
-    cookingJson,
-    jsonToCookingInfo,
-    createCookingCatalog
-  )
+  fetchCookingCatalog: (): CookingCatalog => createCookingCatalog(daiginjo)(cookingInfoList),
 });
 
 /**
@@ -28,17 +23,25 @@ export const createCookingCatalogAdapter = (): CookingCatalogAdapter => ({
  * @param json 
  * @returns 
  */
-const jsonToCookingInfo = (json: ReadonlyArray<CookingJson>): ReadonlyArray<CookingInfo> => (
-  json.map(info => (
-    {
-      iconId: info.iconId,
-      name: info.name,
-      category: toCategory(info.category),
-      foodCandidates: info.foodCandidates ?? [],
-      recipe: info.recipe,
-      season: toSeason(info.season ?? ""),
-      lockType: toLockType(info.lockType ?? ""),
-      addVersion: toAddVersion(info.addVersion ?? ""),
-    }
-  ))
+const jsonToCookingInfo = (json: CookingJson): CookingInfo => ({
+  iconId: json.iconId,
+  name: json.name,
+  category: toCategory(json.category),
+  foodCandidates: json.foodCandidates ?? [],
+  recipe: json.recipe,
+  season: toSeason(json.season ?? ""),
+  lockType: toLockType(json.lockType ?? ""),
+  addVersion: toAddVersion(json.addVersion ?? ""),
+});
+
+/**
+ * 大吟醸
+ */
+const daiginjo: CookingInfo = jsonToCookingInfo(daiginjoJson);
+
+/**
+ * 料理情報リスト
+ */
+const cookingInfoList: ReadonlyArray<CookingInfo> = (
+  cookingJson.map(info => jsonToCookingInfo(info))
 );

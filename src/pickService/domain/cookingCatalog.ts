@@ -1,4 +1,4 @@
-import { flow } from "fp-ts/function";
+import { pipe } from "fp-ts/function";
 import { PickCookingCondition, PickMenuCondition } from "./condition";
 import { AddVersion, Category, LockType, Season } from "./cooking";
 import { CookingInfo } from "./cookingInfo";
@@ -8,28 +8,33 @@ import { CookingInfo } from "./cookingInfo";
  */
 export interface CookingCatalog {
   list: ReadonlyArray<CookingInfo>,
+  daiginjo: CookingInfo,
   filterByMenuCondition: (condition: PickMenuCondition) => CookingCatalog,
   filterByCookingCondition: (condition: PickCookingCondition) => CookingCatalog,
 };
 
 /**
  * 料理カタログを生成
+ * @param daiginjo 料理情報 - 大吟醸
  * @param list 料理情報リスト
  * @returns 料理カタログ
  */
-export const createCookingCatalog = (list: ReadonlyArray<CookingInfo>): CookingCatalog => ({
+export const createCookingCatalog = (daiginjo: CookingInfo) => (list: ReadonlyArray<CookingInfo>): CookingCatalog => ({
   list: list,
+  daiginjo: daiginjo,
   filterByMenuCondition: (condition: PickMenuCondition): CookingCatalog => (
-    flow(
+    pipe(
+      condition,
       filterByMenuCondition(list),
-      createCookingCatalog
-    )(condition)
+      createCookingCatalog(daiginjo)
+    )
   ),
   filterByCookingCondition: (condition: PickCookingCondition): CookingCatalog => (
-    flow(
+    pipe(
+      condition,
       filterByCookingCondition(list),
-      createCookingCatalog
-    )(condition)
+      createCookingCatalog(daiginjo)
+    )
   ),
 });
 
@@ -40,11 +45,12 @@ export const createCookingCatalog = (list: ReadonlyArray<CookingInfo>): CookingC
  * @returns 絞込み後料理情報リスト
  */
 const filterByMenuCondition = (list: ReadonlyArray<CookingInfo>) => (condition: PickMenuCondition): ReadonlyArray<CookingInfo> => (
-  flow(
+  pipe(
+    list,
     filterByAddVersion(condition),
     filterByVentania(condition),
     filterByHotPot(condition)
-  )(list)
+  )
 );
 
 /**
@@ -54,10 +60,11 @@ const filterByMenuCondition = (list: ReadonlyArray<CookingInfo>) => (condition: 
  * @returns 絞込み後料理情報リスト
  */
 const filterByCookingCondition = (list: ReadonlyArray<CookingInfo>) => (condition: PickCookingCondition): ReadonlyArray<CookingInfo> => (
-  flow(
+  pipe(
+    list,
     filterByCategory(condition),
     filterBySeason(condition)
-  )(list)
+  )
 );
 
 /**

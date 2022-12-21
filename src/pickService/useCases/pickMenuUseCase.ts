@@ -18,11 +18,17 @@ export const pickMenu = (
 ) => (
   pickParams: PickParams
 ): ReadonlyArray<Cooking | undefined> => (
-  pickRandomMenu(
+  pipe(
     cookingCatalogAdapter.fetchCookingCatalog(),
-    pickParams.condition,
-    pickParams.randomPicker
-  )
+    (catalog) => pipe(
+      pickRandomMenu(
+        catalog,
+        pickParams.condition,
+        pickParams.randomPicker
+      ),
+      (result) => [...result, catalog.daiginjo]
+    )
+  )  
 );
 
 /**

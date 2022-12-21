@@ -1564,4 +1564,11 @@ export const cookingJson: ReadonlyArray<CookingJson> = [
 		],
 		"recipe": "酢×3, **の薄片×1, 秘薬の素×2"
 	}
-]
+];
+
+export const daiginjoJson: CookingJson = {
+	"iconId": 37,
+	"name": "大吟醸",
+	"category": "飲物",
+	"recipe": "大吟醸×1"
+};
