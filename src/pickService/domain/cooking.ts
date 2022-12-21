@@ -2,7 +2,7 @@
  * 食材確定後の料理
  */
  export type Cooking = {
-  iconId: string,
+  iconId: number,
   name: string,
   category: Category,
   recipe: string,

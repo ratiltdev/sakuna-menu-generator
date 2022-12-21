@@ -133,7 +133,7 @@ export type QueryParams = {
   s4: number,
   v: number,
   h: number,
-  a: number;
+  a: number,
 }
 
 export type PickParams = {
