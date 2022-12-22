@@ -1,17 +1,43 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { pipe } from "fp-ts/function";
+import * as E from "fp-ts/lib/Either";
+import * as T from "fp-ts/lib/Task";
+import * as TE from "fp-ts/lib/TaskEither";
 import styles from '../styles/Home.module.css'
-import { Form } from '../src/components/form'
-import { CookingDictionary } from '../src/domain/cookingDictionary'
-import { fetchCookingDictionary } from "../src/adapters/cookingAdapter"
 import { AdobeFont } from '../src/components/adobeFont'
+import { querySchema } from '../src/adapters/querySchema';
+import { PickResult } from '../src/domain/pickResult';
+import { initialCondition, PickMenuCondition } from '../src/domain/condition';
+import { ConditionForm } from '../src/components/conditionForm';
+import { ConditionFormProps, useCondition } from '../src/hooks/useCondition';
+import { dtoToPickResult, PickResultDTO, serverSideFetch } from '../src/adapters/fetchPickResult';
+import { Button } from '@mui/material';
+import { useResult } from '../src/hooks/useResult';
+import { ResultView } from '../src/components/resultView';
 
+/**
+ * Props
+ */
 type Props = {
-  list: CookingDictionary
-}
+  condition: PickMenuCondition,
+  pickResult: PickResult | null,
+};
 
-const Home: NextPage<Props> = ({list}) => {
+/**
+ * 初期Props
+ */
+const initialProps: Props = {
+  condition: initialCondition,
+  pickResult: null,
+};
+
+const Home: NextPage<Props> = ({condition, pickResult}) => {
+  
+  const props: ConditionFormProps = useCondition(condition);
+  const {result, fetchPickResult} = useResult(pickResult);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -22,7 +48,9 @@ const Home: NextPage<Props> = ({list}) => {
       <AdobeFont kitId='hfd7jpz' scriptTimeout={3000} async={true} />
 
       <main className={styles.main}>
-        <Form list={list}></Form>
+        <ConditionForm {...props}/>
+        <Button variant='contained' onClick={e => fetchPickResult(props.condition)}>選出</Button>
+        {result && <ResultView {...result}/>}
       </main>
 
       <footer className={styles.footer}>
@@ -39,13 +67,39 @@ const Home: NextPage<Props> = ({list}) => {
       </footer>
     </div>
   )
-}
+};
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => ({
-  props: {
-    list: fetchCookingDictionary()
-  }
-}
-)
+/**
+ * ServerSideRendering
+ * @param context 
+ * @returns 
+ */
+export const getServerSideProps: GetServerSideProps<Props> = async (context) => (
+  pipe(
+    context.query,
+    querySchema.safeParse,
+    (parse) => parse.success ?
+      pipe(
+        TE.tryCatch(
+          () => serverSideFetch(parse.data),
+          E.toError,
+        ),
+        TE.fold<Error, PickResultDTO, {props: Props}>(
+          error => T.of({ props: initialProps }),
+          dto => pipe(
+            dto,
+            dtoToPickResult,
+            (pickResult) => T.of({
+              props: {
+                condition: {...pickResult.condition},
+                pickResult: pickResult,
+              }
+            })
+          )
+        )
+      )() :
+      { props: initialProps }
+  )
+);
 
 export default Home
