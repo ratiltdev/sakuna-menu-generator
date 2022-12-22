@@ -1,41 +1,31 @@
 import React from "react";
-import { Container, Stack } from "@mui/material";
+import { Container } from "@mui/material";
 import { ConditionFormProps } from "../hooks/useCondition";
-import { VersionCheckbox } from "./versionCheckbox";
-import { CategorySelect } from "./categorySelect";
-import { HotPotCheckbox } from "./hotpotCheckbox";
-import { SeasonSelect } from "./seasonSelect";
-import { VentaniaCheckbox } from "./ventaniaCheckbox";
+import { RegulationContainer } from "./regulationContainer";
+import { ConditionRow } from "./conditionRow";
 
-type Props = {
-  props: ConditionFormProps,
-}
-
-export const ConditionForm: React.FC<Props> = ({props}) => (
+export const ConditionForm: React.FC<ConditionFormProps> = ({
+  condition,
+  onChangeCategory,
+  onChangeSeason,
+  onChangeVentania,
+  onChangeHotPot,
+  onChangeAdded,
+}) => (
   <Container>
-    {props.condition.cookingConditions.map(cookingCond => (
-      <Stack direction={"row"} spacing={2} key={`stack-${cookingCond.id}`}>
-        <CategorySelect
-          condition={cookingCond}
-          onChange={props.onChangeCategory}
-        />
-        <SeasonSelect
-          condition={cookingCond}
-          onChange={props.onChangeSeason}
-        />
-      </Stack>
+    {condition.cookingConditions.map(cookingCond => (
+      <ConditionRow
+        key={`row-${cookingCond.id}`}
+        condition={cookingCond}
+        onChangeCategory={onChangeCategory}
+        onChangeSeason={onChangeSeason}
+      />
     ))}
-    <VentaniaCheckbox
-      checked={props.condition.isIncludeVentania}
-      onChange={props.onChangeVentania}
-    />
-    <HotPotCheckbox
-      checked={props.condition.isIncludeHotPot}
-      onChange={props.onChangeHotPot}
-    />
-    <VersionCheckbox
-      checked={props.condition.isIncludeAdded}
-      onChange={props.onChangeAdded}
+    <RegulationContainer
+      condition={condition}
+      onChangeVentania={onChangeVentania}
+      onChangeHotPot={onChangeHotPot}
+      onChangeAdded={onChangeAdded}
     />
   </Container>
 )

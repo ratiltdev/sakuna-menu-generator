@@ -1,12 +1,13 @@
-import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import React, { ChangeEvent } from "react";
+import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 
 type Props = {
+  label: string,
   checked: boolean,
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-export const VentaniaCheckbox: React.FC<Props> = ({checked, onChange}) => (
+export const RegulationCheckbox: React.FC<Props> = ({label, checked, onChange}) => (
   <FormGroup>
     <FormControlLabel
       control={
@@ -14,6 +15,7 @@ export const VentaniaCheckbox: React.FC<Props> = ({checked, onChange}) => (
           checked={checked}
           onChange={onChange}
         />}
-      label="ベンタニア料理" />
+      label={label}
+    />
   </FormGroup>
 )

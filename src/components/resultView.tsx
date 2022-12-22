@@ -1,20 +1,18 @@
 import React from "react";
 import { Container, Stack } from "@mui/material";
-import { Result } from "../hooks/useResult";
-import Image from "next/image";
+import { PickResult } from "../domain/pickResult";
+import { CookingIcon } from "./cookingIcon";
 
-type Props = {
-  props: ReadonlyArray<Result>,
-}
-
-export const ResultView: React.FC<Props> = ({props}) => (
+export const ResultView: React.FC<PickResult> = (pickResult) => (
   <Container>
-    {props.map((result, index) => (
-      <Stack direction={"row"} spacing={2} key={`stack-${index}`}>
-        <Image src={`/icon/${result.iconId}.png`} alt={result.name} width={30} height={30} />
-        <p>{result.name}</p>
-        <p>{result.recipe}</p>
-      </Stack>
+    {pickResult.result.map((cooking, index) => (
+      cooking && (
+        <Stack direction={"row"} spacing={2} key={`stack-${index}`}>
+          <CookingIcon cooking={cooking} width={30} height={30}/>
+          <p>{cooking.name}</p>
+          <p>{cooking.recipe}</p>
+        </Stack>
+      )
     ))}
   </Container>
 );
