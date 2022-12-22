@@ -1,5 +1,5 @@
 import { pipe } from "fp-ts/function";
-import { allCategory, allSeason, Category, PickMenuCondition, Season } from "../domain/condition";
+import { PickMenuCondition } from "../domain/condition";
 import { QueryParams } from "./querySchema";
 
 /**
@@ -48,14 +48,14 @@ export const queryParamsToRequestParams = (params: QueryParams): RequestParams =
 export const conditionToRequestParams = (
   { cookingConditions, isIncludeVentania, isIncludeHotPot, isIncludeAdded }: PickMenuCondition
 ): RequestParams => ({
-  c1: categoryToParam(cookingConditions[0].category),
-  c2: categoryToParam(cookingConditions[1].category),
-  c3: categoryToParam(cookingConditions[2].category),
-  c4: categoryToParam(cookingConditions[3].category),
-  s1: seasonToParam(cookingConditions[0].season),
-  s2: seasonToParam(cookingConditions[1].season),
-  s3: seasonToParam(cookingConditions[2].season),
-  s4: seasonToParam(cookingConditions[3].season),
+  c1: cookingConditions[0].category,
+  c2: cookingConditions[1].category,
+  c3: cookingConditions[2].category,
+  c4: cookingConditions[3].category,
+  s1: cookingConditions[0].season,
+  s2: cookingConditions[1].season,
+  s3: cookingConditions[2].season,
+  s4: cookingConditions[3].season,
   v: Number(isIncludeVentania),
   h: Number(isIncludeHotPot),
   a: Number(isIncludeAdded),
@@ -75,46 +75,18 @@ export const paramsToQueryString = (params: RequestParams): string => (
 );
 
 /**
- * Category -> RequestParam
- * @param category 
- * @returns 
- */
-const categoryToParam = (category: Category): number => allCategory.findIndex(c => c === category);
-
-/**
- * Season -> RequestParam
- * @param season 
- * @returns
- */
-const seasonToParam = (season: Season): number => allSeason.findIndex(s => s === season);
-
-/**
  * RequestParams -> PickMenuCondition
  * @param params 
  * @returns 
  */
 export const paramsToCondition = (params: RequestParams): PickMenuCondition => ({
   cookingConditions: [
-    { id: 1, category: valueToCategory(params.c1), season: valueToSeason(params.s1) },
-    { id: 2, category: valueToCategory(params.c2), season: valueToSeason(params.s2) },
-    { id: 3, category: valueToCategory(params.c3), season: valueToSeason(params.s3) },
-    { id: 4, category: valueToCategory(params.c4), season: valueToSeason(params.s4) },
+    { id: 1, category: params.c1, season: params.s1 },
+    { id: 2, category: params.c2, season: params.s2 },
+    { id: 3, category: params.c3, season: params.s3 },
+    { id: 4, category: params.c4, season: params.s4 },
   ],
   isIncludeVentania: !!params.v,
   isIncludeHotPot: !!params.h,
   isIncludeAdded: !!params.a,
 });
-
-/**
- * value -> Category
- * @param value 0 ~ 5
- * @returns Category
- */
-const valueToCategory = (value: number): Category => allCategory[value];
-
-/**
- * value -> Season
- * @param value 0 ~ 4
- * @returns Season
- */
-const valueToSeason = (value: number): Season => allSeason[value];

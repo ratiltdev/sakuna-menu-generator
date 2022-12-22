@@ -1,12 +1,24 @@
 import React from "react";
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
-import { Category } from "../domain/condition";
 
 type Props = {
   id: number,
-  value: Category,
-  onChange: (e: SelectChangeEvent<string>, id: number) => void,
+  value: number,
+  onChange: (e: SelectChangeEvent<number>, id: number) => void,
 }
+
+/**
+ * カテゴリ
+ */
+const Category = {
+  NONE: "指定なし",
+  MAIN: "主食",
+  SOUP: "汁",
+  SIDE: "菜",
+  DESSERT: "菓子",
+  DRINK: "飲物"
+} as const;
+type Category = typeof Category[keyof typeof Category];
 
 /**
  * Selectbox - カテゴリ
@@ -23,12 +35,12 @@ export const CategorySelect: React.FC<Props> = ({id, value, onChange}) => (
       value={value}
       onChange={(e) => onChange(e, id)}
     >
-      <MenuItem value={Category.NONE}>{Category.NONE}</MenuItem>
-      <MenuItem value={Category.MAIN}>{Category.MAIN}</MenuItem>
-      <MenuItem value={Category.SOUP}>{Category.SOUP}</MenuItem>
-      <MenuItem value={Category.SIDE}>{Category.SIDE}</MenuItem>
-      <MenuItem value={Category.DESSERT}>{Category.DESSERT}</MenuItem>
-      <MenuItem value={Category.DRINK}>{Category.DRINK}</MenuItem>
+      <MenuItem value={0}>{Category.NONE}</MenuItem>
+      <MenuItem value={1}>{Category.MAIN}</MenuItem>
+      <MenuItem value={2}>{Category.SOUP}</MenuItem>
+      <MenuItem value={3}>{Category.SIDE}</MenuItem>
+      <MenuItem value={4}>{Category.DESSERT}</MenuItem>
+      <MenuItem value={5}>{Category.DRINK}</MenuItem>
     </Select>
   </FormControl>
 );

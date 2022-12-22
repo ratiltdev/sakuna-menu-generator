@@ -5,8 +5,8 @@ import { SeasonSelect } from "./seasonSelect"
 
 type Props = {
   condition: PickCookingCondition,
-  onChangeCategory: (e: SelectChangeEvent<string>, id: number) => void,
-  onChangeSeason: (e: SelectChangeEvent<string>, id: number) => void,
+  onChangeCategory: (e: SelectChangeEvent<number>, id: number) => void,
+  onChangeSeason: (e: SelectChangeEvent<number>, id: number) => void,
 }
 
 export const ConditionRow: React.FC<Props> = ({

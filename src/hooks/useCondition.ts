@@ -1,14 +1,14 @@
 import { ChangeEvent, useState } from "react";
 import { SelectChangeEvent } from "@mui/material";
-import { PickCookingCondition, PickMenuCondition, toCategory, toSeason } from "../domain/condition";
+import { PickCookingCondition, PickMenuCondition } from "../domain/condition";
 
 /**
  * Form受渡し用
  */
 export type ConditionFormProps = {
   condition: PickMenuCondition,
-  onChangeCategory: (e: SelectChangeEvent<string>, id: number) => void,
-  onChangeSeason: (e: SelectChangeEvent<string>, id: number) => void,
+  onChangeCategory: (e: SelectChangeEvent<number>, id: number) => void,
+  onChangeSeason: (e: SelectChangeEvent<number>, id: number) => void,
   onChangeVentania: (e: ChangeEvent<HTMLInputElement>) => void,
   onChangeHotPot: (e: ChangeEvent<HTMLInputElement>) => void,
   onChangeAdded: (e: ChangeEvent<HTMLInputElement>) => void,
@@ -23,10 +23,10 @@ export const useCondition = (init: PickMenuCondition): ConditionFormProps => {
    * @param e - SelectChangeEvent
    * @param id - CookingCondition.id
    */
-  const onChangeCategory = (e: SelectChangeEvent<string>, id: number): void => (
+  const onChangeCategory = (e: SelectChangeEvent<number>, id: number): void => (
     setCondition(prev => replaceCookingConditionRow(
       prev,
-      (cond: PickCookingCondition) => cond.id === id ? {...cond, category: toCategory(e.target.value)} : cond
+      (cond: PickCookingCondition) => cond.id === id ? {...cond, category: Number(e.target.value)} : cond
     ))
   );
   
@@ -35,10 +35,10 @@ export const useCondition = (init: PickMenuCondition): ConditionFormProps => {
    * @param e - SelectChangeEvent
    * @param id - CookingCondition.id
    */
-  const onChangeSeason = (e: SelectChangeEvent<string>, id: number): void => (
+  const onChangeSeason = (e: SelectChangeEvent<number>, id: number): void => (
     setCondition(prev => replaceCookingConditionRow(
       prev,
-      (cond: PickCookingCondition) => cond.id === id ? {...cond, season: toSeason(e.target.value)} : cond
+      (cond: PickCookingCondition) => cond.id === id ? {...cond, season: Number(e.target.value)} : cond
     ))
   );
 
