@@ -9,7 +9,7 @@ import { conditionToRequestParams, paramsToCondition, paramsToQueryString, query
  */
 export type PickResultDTO = {
   params: RequestParams,
-  result: [Cooking | null, Cooking | null, Cooking | null, Cooking | null, Cooking]
+  result: [Cooking | null, Cooking | null, Cooking | null, Cooking | null, Cooking],
 };
 
 /**
@@ -39,12 +39,18 @@ export const clientSideFetch = (condition: PickMenuCondition): Promise<PickResul
 );
 
 /**
+ * DTO -> PickMenuCondition
+ * @param dto 
+ * @returns 
+ */
+export const dtoToCondition = (dto: PickResultDTO): PickMenuCondition => paramsToCondition(dto.params);
+
+/**
  * DTO -> PickResult
  * @param dto 
  * @returns 
  */
 export const dtoToPickResult = (dto: PickResultDTO): PickResult => ({
-  condition: paramsToCondition(dto.params),
   result: dto.result,
   shareUrl: getApiUrl(dto.params),
 });

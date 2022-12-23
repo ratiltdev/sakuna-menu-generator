@@ -1,5 +1,3 @@
-import { PickMenuCondition } from "./condition";
-
 /**
  * 料理
  */
@@ -13,7 +11,15 @@ export type Cooking = {
  * 選出結果
  */
 export type PickResult = {
-  condition: PickMenuCondition,
   result: [Cooking | null, Cooking | null, Cooking | null, Cooking | null, Cooking],
   shareUrl: string,
 };
+
+/**
+ * 選出結果にNULLが含まれているか判定する
+ * @param param0 
+ * @returns boolean
+ */
+export const hasError = ({result}: PickResult): boolean => (
+  result.filter(cooking => cooking == null).length > 0
+);

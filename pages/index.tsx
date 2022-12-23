@@ -12,7 +12,7 @@ import { PickResult } from '../src/domain/pickResult';
 import { initialCondition, PickMenuCondition } from '../src/domain/condition';
 import { ConditionForm } from '../src/components/conditionForm';
 import { ConditionFormProps, useCondition } from '../src/hooks/useCondition';
-import { dtoToPickResult, PickResultDTO, serverSideFetch } from '../src/adapters/fetchPickResult';
+import { dtoToCondition, dtoToPickResult, PickResultDTO, serverSideFetch } from '../src/adapters/fetchPickResult';
 import { Button } from '@mui/material';
 import { useResult } from '../src/hooks/useResult';
 import { ResultView } from '../src/components/resultView';
@@ -86,16 +86,12 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
         ),
         TE.fold<Error, PickResultDTO, {props: Props}>(
           error => T.of({ props: initialProps }),
-          dto => pipe(
-            dto,
-            dtoToPickResult,
-            (pickResult) => T.of({
-              props: {
-                condition: {...pickResult.condition},
-                pickResult: pickResult,
-              }
-            })
-          )
+          dto => T.of({
+            props: {
+              condition: dtoToCondition(dto),
+              pickResult: dtoToPickResult(dto),
+            }
+          })
         )
       )() :
       { props: initialProps }
