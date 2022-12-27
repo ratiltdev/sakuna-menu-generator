@@ -10,12 +10,12 @@ import { AdobeFont } from '../src/components/adobeFont'
 import { querySchema } from '../src/adapters/querySchema';
 import { PickResult } from '../src/domain/pickResult';
 import { initialCondition, PickMenuCondition } from '../src/domain/condition';
-import { ConditionForm } from '../src/components/conditionForm';
+import { ConditionForm } from '../src/components/condition/conditionForm';
 import { ConditionFormProps, useCondition } from '../src/hooks/useCondition';
 import { dtoToCondition, dtoToPickResult, PickResultDTO, serverSideFetch } from '../src/adapters/fetchPickResult';
 import { Button } from '@mui/material';
 import { useResult } from '../src/hooks/useResult';
-import { ResultView } from '../src/components/resultView';
+import { ResultView } from '../src/components/result/resultView';
 
 /**
  * Props

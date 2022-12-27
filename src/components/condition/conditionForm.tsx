@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "@mui/material";
-import { ConditionFormProps } from "../hooks/useCondition";
+import { ConditionFormProps } from "../../hooks/useCondition";
 import { RegulationContainer } from "./regulationContainer";
 import { ConditionRow } from "./conditionRow";
 
@@ -22,7 +22,9 @@ export const ConditionForm: React.FC<ConditionFormProps> = ({
       />
     ))}
     <RegulationContainer
-      condition={condition}
+      isIncludeVentania={condition.isIncludeVentania}
+      isIncludeHotPot={condition.isIncludeHotPot}
+      isIncludeAdded={condition.isIncludeAdded}
       onChangeVentania={onChangeVentania}
       onChangeHotPot={onChangeHotPot}
       onChangeAdded={onChangeAdded}

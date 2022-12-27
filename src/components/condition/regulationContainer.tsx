@@ -1,17 +1,20 @@
 import React, { ChangeEvent } from "react";
 import { Container } from "@mui/material";
-import { PickMenuCondition } from "../domain/condition";
 import { RegulationCheckbox } from "./regulationCheckbox";
 
 type Props = {
-  condition: PickMenuCondition,
+  isIncludeVentania: boolean,
+  isIncludeHotPot: boolean,
+  isIncludeAdded: boolean,
   onChangeVentania: (e: ChangeEvent<HTMLInputElement>) => void,
   onChangeHotPot: (e: ChangeEvent<HTMLInputElement>) => void,
   onChangeAdded: (e: ChangeEvent<HTMLInputElement>) => void,
 };
 
 export const RegulationContainer: React.FC<Props> = ({
-  condition,
+  isIncludeVentania,
+  isIncludeHotPot,
+  isIncludeAdded,
   onChangeVentania,
   onChangeHotPot,
   onChangeAdded,
@@ -19,17 +22,17 @@ export const RegulationContainer: React.FC<Props> = ({
   <Container>
     <RegulationCheckbox
       label="ベンタニア料理"
-      checked={condition.isIncludeVentania}
+      checked={isIncludeVentania}
       onChange={onChangeVentania}
     />
     <RegulationCheckbox
       label="鍋物"
-      checked={condition.isIncludeHotPot}
+      checked={isIncludeHotPot}
       onChange={onChangeHotPot}
     />
     <RegulationCheckbox
       label="ver.Nov 8 2021追加料理"
-      checked={condition.isIncludeAdded}
+      checked={isIncludeAdded}
       onChange={onChangeAdded}
     />
   </Container>
