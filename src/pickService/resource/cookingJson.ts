@@ -1410,7 +1410,7 @@ export const cookingJson: ReadonlyArray<CookingJson> = [
 		"iconId": 33,
 		"name": "水",
 		"category": "飲物",
-		"recipe": ""
+		"recipe": "なし"
 	},
 	{
 		"iconId": 33,
